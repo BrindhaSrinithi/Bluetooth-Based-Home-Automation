@@ -1,0 +1,32 @@
+# CODE:
+int bulb=8;
+
+
+void setup()
+ {
+pinMode(bulb,OUTPUT);  
+Serial.begin(9600);
+}
+
+void loop() 
+{
+if(Serial.available()>0);
+{
+  char data=Serial.read();
+  if (data=='N')
+  {
+    digitalWrite(bulb,1);
+    Serial.println("bulb is on");
+  }
+  else if(data=='F')
+  {
+    digitalWrite(bulb,0);
+    Serial.println("bulb is off");
+  }
+   else
+   {
+    digitalWrite(bulb,0);
+    Serial.println("bulb is off") 
+   }
+}
+}
